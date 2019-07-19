@@ -40,33 +40,28 @@ const characters = [
       clicked: false
   },
   {
-      id: 1,
+      id: 8,
       image: "./images/pineapple.jpg",
       clicked: false
   },
   {
-      id: 8,
+      id: 9,
       image: "./images/plankton.jpg",
       clicked: false
   },
   {
-      id: 9,
+      id: 10,
       image: "./images/sandy.jpg",
       clicked: false
   },
   {
-      id: 10,
+      id: 11,
       image: "./images/sponge.jpg",
       clicked: false
   },
   {
-      id: 11,
-      image: "./images/squid.jpg",
-      clicked: false
-  },
-  {
       id: 12,
-      image: "./images/squidHome.png",
+      image: "./images/squid.jpg",
       clicked: false
   }
 
@@ -107,11 +102,44 @@ class App extends React.Component {
     }
 }
 
+emptyDiv =() => {
+  let emptyThisDiv = document.getElementsByClassName("needsEmpty")
+  emptyThisDiv.innerHTML=""
+}
+
   render() {
+
+    this.emptyDiv()
+    
+
+    var shuffle = function (array) {
+
+      var currentIndex = array.length;
+      var temporaryValue, randomIndex;
+    
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+    
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+    
+      return array;
+    
+    };
+    
+    var shuffled = shuffle(characters)
+    
+
     return (
       <div>
-        <Header score={this.state.score} highScore={this.state.score} />
-        <Game score={this.state.score} highScore={this.state.score} handleClick={this.handleClick} characters={characters}/>
+        <Header score={this.state.score} highScore={this.state.highScore} />
+        <Game score={this.state.score} highScore={this.state.score} handleClick={this.handleClick} characters={shuffled}/>
         <Footer />
       </div>
     );

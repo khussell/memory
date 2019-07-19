@@ -6,7 +6,7 @@ class Header extends React.Component {
     render() {
         return (
             <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-                <span class="navbar-brand mb-0 h1 ">Memory</span>
+                <span className="navbar-brand mb-0 h1 ">Memory</span>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>

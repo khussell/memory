@@ -1,2 +1,2 @@
 # memory
-A memory game where you click images that you have not clicked yet. Full stack app.
+A memory game where you click images that you have not clicked yet. 

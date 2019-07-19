@@ -1,0 +1,21 @@
+#background{
+    background-color: rgb(67, 90, 134);
+    height: 800px;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+    
+}
+
+button{
+    background-color: white;
+    color: rgb(67, 90, 134);
+    border: white 1px solid;
+    box-shadow: 2px 2px grey;
+    margin-right: 20px;
+}
+
+.nav-item{
+    margin-right: 20px;
+    color: white;
+}

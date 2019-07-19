@@ -11,7 +11,7 @@ class Game extends React.Component {
 
         return (
             <div className="container needsEmpty">
-                <div style={{ marginTop: 100 }} className="row">
+                <div style={{ marginTop: 60 }} className="row">
                     {this.props.characters.map(char => {
                         return (<Character handleClick={this.props.handleClick} key={char.id} id={char.id} image={char.image} clicked={char.clicked} />)
                     })}

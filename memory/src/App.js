@@ -6,62 +6,62 @@ import Footer from "./components/Footer"
 const characters = [
   {
       id: 1,
-      image: "./images/gary.png",
+      image: "./images/lilu1.png",
       clicked: false
   },
   {
       id: 2,
-      image: "./images/krustyKrab.png",
+      image: "./images/lilu3.png",
       clicked: false
   },
   {
       id: 3,
-      image: "./images/larry.png",
+      image: "./images/lilu5.png",
       clicked: false
   },
   {
       id: 4,
-      image: "./images/mrKrabs.jpg",
+      image: "./images/lilu12.png",
       clicked: false
   },
   {
       id: 5,
-      image: "./images/mrsPuff.jpg",
+      image: "./images/lilu13.png",
       clicked: false
   },
   {
       id: 6,
-      image: "./images/patrick.jpg",
+      image: "./images/lilu14.png",
       clicked: false
   },
   {
       id: 7,
-      image: "./images/pearl.jpg",
+      image: "./images/lilu15.png",
       clicked: false
   },
   {
       id: 8,
-      image: "./images/pineapple.jpg",
+      image: "./images/lilu2.png",
       clicked: false
   },
   {
       id: 9,
-      image: "./images/plankton.jpg",
+      image: "./images/lilu4.png",
       clicked: false
   },
   {
       id: 10,
-      image: "./images/sandy.jpg",
+      image: "./images/lilu6.png",
       clicked: false
   },
   {
       id: 11,
-      image: "./images/sponge.jpg",
+      image: "./images/lilu9.png",
       clicked: false
   },
   {
       id: 12,
-      image: "./images/squid.jpg",
+      image: "./images/lilu10.png",
       clicked: false
   }
 
@@ -82,9 +82,11 @@ class App extends React.Component {
                 characters[i].clicked = true
                 if (this.state.score < 12) {
                     this.setState({ score: this.state.score + 1 })
-                } else {
-                    alert("You won")
-                }
+                    console.log(this.state.score)
+                    if (this.state.score === 11){
+                      alert("You won")
+                    }
+                } 
             } else {
                 if (this.state.score > this.state.highScore) {
                     this.setState({ highScore: this.state.score })

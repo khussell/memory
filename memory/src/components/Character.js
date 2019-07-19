@@ -1,4 +1,7 @@
 import React from "react"
+import "../styles/character.css"
+
+
 
 class Character extends React.Component{
     state={
@@ -7,8 +10,9 @@ class Character extends React.Component{
 
     render() {
         return(
-            <div>
-              <img alt="Gary" onClick={() => this.props.handleClick(this.props.id)} style={{margin: 20}} height="140px" src={this.props.image}/>
+            <div className="col-4 col-sm-3 col-md-3  col-lg-3 ">
+              <img  className="images" alt="Lilu" onClick={() => this.props.handleClick(this.props.id)} style={{margin: 20,
+            backgroundColor: "white", padding: 5}} width="70%"  src={this.props.image}/>
             </div>
         )
     }

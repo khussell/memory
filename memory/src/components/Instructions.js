@@ -3,7 +3,9 @@ import React from "react"
 class Instructions extends React.Component{
     render() {
         return(
-            <div>soon</div>
+            <div id="instruct" style={{position: "absolute", zIndex: 3, backgroundColor: "white"}}>
+                <p>Hello there this will be instructions</p>
+            </div>
         )
     }
 }

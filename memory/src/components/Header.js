@@ -12,6 +12,7 @@ class Header extends React.Component {
             if(instruct.style.display === "block"){
                 instruct.style.display = "none"
                 document.removeEventListener("click", addOrRemove)
+               
             }
         }
 
@@ -31,7 +32,7 @@ class Header extends React.Component {
                 </button>
         <div className="collapse navbar-collapse justify-content-end" style={{textAlign:"right"}} id="navbarNav"> 
                     <ul className="navbar-nav ">
-                        <li className="nav-item"><button onClick={this.showInstructions}>Instructions</button></li>
+                        <li className="nav-item"><button id="button" onClick={this.showInstructions}>Instructions</button></li>
                         <li className="nav-item">Score: {this.props.score}</li>
                         <li className="nav-item"> High Score: {this.props.highScore}</li>
                     </ul>

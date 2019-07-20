@@ -3,6 +3,7 @@ import Header from "./components/Header"
 import Game from "./components/Game"
 import Footer from "./components/Footer"
 import Instructions from "./components/Instructions"
+import Info from "./components/Info"
 
 const characters = [
   {
@@ -85,15 +86,15 @@ class App extends React.Component {
                     this.setState({ score: this.state.score + 1 })
                     console.log(this.state.score)
                     if (this.state.score === 11){
-                      alert("You won")
+                      this.showInfo("win")
                     }
                 } 
             } else {
                 if (this.state.score > this.state.highScore) {
                     this.setState({ highScore: this.state.score })
-                    alert("You didn't make it, but you have a new high score")
+                    this.showInfo("highScore")
                 } else {
-                    alert("You lost")
+                    this.showInfo("lost")
                 }
                 this.setState({ score: 0 })
                 for (let i = 0; i < characters.length; i++) {
@@ -104,6 +105,44 @@ class App extends React.Component {
         }
     }
 }
+
+
+showInfo = (whatHappened) =>{
+  console.log("hi")
+  const info = document.querySelector("#info")
+  const infoP = document.querySelector("#infoP")
+  info.style.display= "block"
+  
+
+  const addOrRemove = () =>{
+      if(info.style.display === "block"){
+          info.style.display = "none"
+          document.removeEventListener("click", addOrRemove)
+      }
+  }
+  
+      
+  switch(whatHappened){
+    case "win":
+       infoP.innerHTML="You WON!!!";
+       document.addEventListener("click", addOrRemove)
+       break;
+    case "lost":
+       infoP.innerHTML="You Lost!!!";
+      document.addEventListener("click", addOrRemove)
+      break;
+    case "highScore":
+      infoP.innerHTML="You lost, but made a new high score!!!";
+      document.addEventListener("click", addOrRemove)
+      break;
+    default:
+      return console.log("hi")
+  }
+
+}
+
+
+
 
 emptyDiv =() => {
   let emptyThisDiv = document.getElementsByClassName("needsEmpty")
@@ -143,6 +182,7 @@ emptyDiv =() => {
       <div>
         <Header score={this.state.score} highScore={this.state.highScore} />
         <Instructions />
+        <Info />
         <Game score={this.state.score} highScore={this.state.score} handleClick={this.handleClick} characters={shuffled}/>
         <Footer />
       </div>

@@ -1,11 +1,25 @@
 import React from "react"
-//import Instructions from "./Instructions"
+
 
 class Header extends React.Component {
    
     showInstructions = () =>{
-        let instruct = document.getElementById("instruct")
-        instruct.style.display="block"
+        console.log("hi")
+        const instruct = document.querySelector("#instruct")
+        instruct.style.display= "block"
+
+        const addOrRemove = () =>{
+            if(instruct.style.display === "block"){
+                instruct.style.display = "none"
+                document.removeEventListener("click", addOrRemove)
+            }
+        }
+
+        document.addEventListener("click", addOrRemove)
+        
+            
+        
+    
     }
 
     render() {

@@ -2,6 +2,7 @@ import React from 'react';
 import Header from "./components/Header"
 import Game from "./components/Game"
 import Footer from "./components/Footer"
+import Instructions from "./components/Instructions"
 
 const characters = [
   {
@@ -141,6 +142,7 @@ emptyDiv =() => {
     return (
       <div>
         <Header score={this.state.score} highScore={this.state.highScore} />
+        <Instructions />
         <Game score={this.state.score} highScore={this.state.score} handleClick={this.handleClick} characters={shuffled}/>
         <Footer />
       </div>
